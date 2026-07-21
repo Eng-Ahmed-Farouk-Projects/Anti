@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anti-DA | محارب الدوبامين</title>
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-image: url('https://picsum.photos/id/1015/1920/1080'); 
+background-position: center;
+background-attachment: fixed;
+color: #1e293b;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+position: relative;
+}
+
+body::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(45, 45, 45, 0.92); 
+z-index: -1;
+}
+
+header {
+border-bottom: 1px solid #a9abae;
+background-color: rgba(255, 255, 255, 0.657);
+position: sticky;
+top: 0;
+z-index: 50;
+padding: 15px 20px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+max-width: 1000px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 24px;
+font-weight: bold;
+color: #3b82f6;
+margin: 0;
+}
+
+.points-display {
+background-color: rgba(147, 197, 253, 0.2);
+color: #003cff;
+padding: 5px 15px;
+border-radius: 20px;
+font-weight: bold;
+border: 1px solid rgba(147, 197, 253, 0.6);
+}
+
+nav a {
+color: #000000;
+text-decoration: none;
+margin-right: 15px;
+font-size: 14px;
+transition: color 0.2s;
+}
+
+nav a:hover {
+color: #0062ff;
+}
+
+main {
+max-width: 800px;
+margin: 0 auto;
+padding: 40px 20px;
+}
+
+.hero {
+text-align: center;
+margin-bottom: 50px;
+}
+
+.badge {
+background-color: rgba(147, 197, 253, 0.15);
+color: #003cff;
+padding: 5px 12px;
+border-radius: 20px;
+font-size: 12px;
+font-weight: bold;
+display: inline-block;
+margin-bottom: 15px;
+}
+
+.section-box {
+background-color: rgba(215, 214, 214, 0.407);
+border: 1px solid #4f5760;
+border-radius: 16px;
+padding: 30px;
+margin-bottom: 40px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+color: #000000;
+margin-top: 0;
+font-size: 22px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.section-desc {
+color: #343c47;
+font-size: 14px;
+margin-bottom: 20px;
+}
+
+.quiz-container {
+background-color: rgba(150, 150, 150, 0.529);
+border: 1px solid #276cc1;
+padding: 20px;
+border-radius: 12px;
+}
+
+.btn-option {
+background-color: #acadae;
+border: 1px solid #e2e8f0;
+color: #1e293b;
+padding: 15px;
+border-radius: 8px;
+width: 100%;
+text-align: right;
+cursor: pointer;
+margin-bottom: 10px;
+font-size: 15px;
+transition: all 0.2s;
+display: block;
+}
+
+.btn-option:hover {
+border-color: #60a5fa;
+background-color: rgba(147, 197, 253, 0.1);
+}
+
+.hidden {
+display: none !important;
+}
+
+.btn-main {
+background-color: #3b82f6;
+color: white;
+font-weight: bold;
+padding: 12px 25px;
+border-radius: 8px;
+border: none;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.2s;
+box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.btn-main:hover {
+background-color: #2563eb;
+}
+
+.grid-shop {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
+
+@media (max-width: 600px) {
+.grid-shop { grid-template-columns: 1fr; }
+}
+
+.shop-item {
+background: rgba(188, 188, 188, 0.821);
+border: 1px solid #e2e8f0;
+padding: 15px;
+border-radius: 12px;
+text-align: center;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.shop-item img {
+width: 100%;
+height: 140px;
+object-fit: cover;
+border-radius: 8px;
+margin-bottom: 12px;
+}
+
+.item-price {
+color: #1e40af;
+font-weight: bold;
+font-size: 14px;
+margin-bottom: 10px;
+}
+
+.btn-buy {
+background-color: #60a5fa;
+color: white;
+border: none;
+padding: 8px 15px;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+width: 100%;
+transition: all 0.2s;
+}
+
+.btn-buy:hover { background-color: #3b82f6; }
+
+.streak-box {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: rgba(204, 204, 204, 0.95);
+padding: 20px;
+border-radius: 12px;
+border: 1px solid #bfdbfe;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+footer {
+text-align: center;
+padding: 20px;
+color: #64748b;
+font-size: 12px;
+border-top: 1px solid #e2e8f0;
+}
+</style>
+</head>
+<body>
+
+
+<header>
+<div class="header-container">
+<h1 class="logo">Anti-DA</h1>
+<div class="points-display"> الرصيد: <span id="user-points">0</span> نقطة</div>
+</div>
+<div style="text-align:center; margin-top:10px;">
+<nav>
+<a href="#assessment">الاختبار</a>
+<a href="#alternatives">الأنشطة</a>
+<a href="#tracker">المتتبع</a>
+<a href="#shop">المتجر</a>
+<a href="#courses">الكورسات</a>
+<a href="#events">الندوات والمؤتمرات</a>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="hero">
+<span class="badge">نظام مكافآت صحي بديل</span>
+<h2 style="color: #82b6ffd4">مرحباً بك في Anti-DA</h2>
+<p style="color: #a6cbff;">حوّل رحلة علاج إدمان الدوبامين إلى لعبة. نفذ الأنشطة، اجمع النقاط، واشترِ مكافآتك الحقيقية بنفسك.</p>
+</div>
+
+<div id="assessment" class="section-box">
+<h3 class="section-title">1. مقياس الإدمان الرقمي <span style="font-size:12px; color:#000000;">(+15 نقطة عند الإكمال)</span></h3>
+<p class="section-desc">جاوب بصراحة لنحدد مستوى تعلق دماغك بالمشتتات.</p>
+
+<div class="quiz-container">
+<div id="step-1">
+<p style="font-weight: bold; margin-bottom: 15px;">السؤال 1: ما هو أول شيء تفعله فور استيقاظك من النوم؟</p>
+<button type="button" onclick="nextQuestion(1, 3)" class="btn-option">أفتح الهاتف فوراً لتصفح الإشعارات</button>
+<button type="button" onclick="nextQuestion(1, 1)" class="btn-option">أقوم بروتيني الصباحي دون لمس الهاتف</button>
+</div>
+
+<div id="step-2" class="hidden">
+<p style="font-weight: bold; margin-bottom: 15px;">السؤال 2: عندما تشعر بالملل لمدة دقيقتين فقط، ماذا تفعل؟</p>
+<button type="button" onclick="nextQuestion(2, 3)" class="btn-option">أخرج هاتفي فوراً وأبدأ بالتمرير العشوائي</button>
+<button type="button" onclick="nextQuestion(2, 1)" class="btn-option">أفكر بهدوء، أتنفس، أو أتقبل الزهق ببساطة</button>
+</div>
+
+<div id="step-3" class="hidden">
+<p style="font-weight: bold; margin-bottom: 15px;">السؤال 3: كم مرة تفتح فيها تطبيقات السوشيال ميديا في الساعة؟</p>
+<button type="button" onclick="showResult(3)" class="btn-option">أكثر من 10 مرات، لا أستطيع التوقف</button>
+<button type="button" onclick="showResult(1)" class="btn-option">مرات قليلة جداً ومحددة</button>
+</div>
+
+<div id="quiz-result" class="hidden" style="text-align: center; padding: 15px;">
+<p style="font-weight: bold; margin-bottom: 5px;">تحليلك النهائي:</p>
+<p id="result-text" style="color:#1e40af; font-weight:bold; margin-bottom:15px;"></p>
+<button type="button" onclick="resetQuiz()" style="background:none; border:none; color:#475569; text-decoration:underline; cursor:pointer;">إعادة الاختبار</button>
+</div>
+</div>
+</div>
+
+<div id="alternatives" class="section-box" style="text-align: center;">
+<h3 class="section-title">2. مولّد الأنشطة البديلة <span style="font-size:12px; color:#000000;">(+10 نقاط عند التنفيذ)</span></h3>
+<p class="section-desc">بدل ما تفتح تيك توك أو إنستجرام، نفذ النشاط ده حالاً واكسب نقاطك.</p>
+
+<div style="min-height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 20px;">
+<p id="alternative-text" style="font-size: 18px; color: #334155; margin: 0; font-weight:bold;">هل أنت جاهز لتحدي الملل؟</p>
+</div>
+
+<div style="display:flex; gap:10px; justify-content:center;">
+<button type="button" onclick="generateAlternative()" class="btn-main" style="background-color:#60a5fa; color:white;">اقترح نشاط عشوائي</button>
+<button type="button" id="btn-done" onclick="completeActivity()" class="btn-main hidden">أنهيت النشاط بنجاح! طالِب بالنقاط</button>
+</div>
+</div>
+
+<div id="tracker" class="section-box">
+<h3 class="section-title">3. متتبع الأيام المتتالية <span style="font-size:12px; color:#000000;">(+30 نقطة يومياً)</span></h3>
+<p class="section-desc">سجل دخولك اليومي لتبني سلسلة استمرار قوية وتضاعف نقاطك.</p>
+
+<div class="streak-box">
+<span id="streak-count" style="font-size: 64px; font-weight: bold; color: #1e40af; margin: 10px 0;">0</span>
+<p style="margin:0 0 15px 0; color:#475569; font-size:14px;">يوم بدون إدمان رقمي</p>
+<button type="button" id="btn-streak" onclick="incrementStreak()" class="btn-main">سجّل إنجاز اليوم</button>
+</div>
+</div>
+
+<div id="shop" class="section-box">
+<h3 class="section-title">4. متجر المكافآت (The Shop)</h3>
+<p class="section-desc">استثمر نقاطك لشراء مكافآت حقيقية تمنحها لنفسك بضمير مرتاح.</p>
+
+<div class="grid-shop">
+<!-- Item 1: Games -->
+<div class="shop-item">
+<img src="https://www.technewsworld.com/wp-content/uploads/sites/3/2022/10/kid-video-game-player.jpg" alt="ألعاب فيديو">
+<h4 style="margin:5px 0;">نصف ساعة ألعاب فيديو</h4>
+<p class="item-price">🪙 50 نقطة</p>
+<button type="button" onclick="buyItem('نصف ساعة ألعاب فيديو', 50)" class="btn-buy">شراء المكافأة</button>
+</div>
+
+<!-- Item 2: Cheat Meal -->
+<div class="shop-item">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT01XZpwtIrjDO_QllhdZVDr7knY1yFVrXbFqdHysAlsQ&s=10" alt="وجبة سريعة">
+<h4 style="margin:5px 0;">تناول وجبة سريعة (Cheat Meal)</h4>
+<p class="item-price">🪙 150 نقطة</p>
+<button type="button" onclick="buyItem('وجبة سريعة المفضلة', 150)" class="btn-buy">شراء المكافأة</button>
+</div>
+
+<!-- Item 3: Shopping -->
+<div class="shop-item">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFJSK0vZv-pVoAVx8MKhCuzyfUhh4MtsMvGvrfjWZQiA&s=10" alt="شوبينج">
+<h4 style="margin:5px 0;">شراء شيء تحبه (شوبينج)</h4>
+<p class="item-price">🪙 300 نقطة</p>
+<button type="button" onclick="buyItem('إذن شراء شيء تحبه', 300)" class="btn-buy">شراء المكافأة</button>
+</div>
+
+<!-- Item 4: Movie -->
+<div class="shop-item">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfzTMkJF4FH5-hDFEpBboFkR5Ys5Y4qTHKFWy6dSzL_g&s=10" alt="فيلم">
+<h4 style="margin:5px 0;">مشاهدة فيلم سهرة كامل</h4>
+<p class="item-price">🪙 80 نقطة</p>
+<button type="button" onclick="buyItem('مشاهدة فيلم سهرة', 80)" class="btn-buy">شراء المكافأة</button>
+</div>
+
+<!-- Item 5: New - بوكس Anti-DA -->
+<div class="shop-item">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMX9YFyncrvlEV1e3e9k3STEdYSkqzhaCmfNdKafTPQ&s=10" alt="بوكس Anti-DA">
+<h4 style="margin:5px 0;">بوكس Anti-DA</h4>
+<p class="item-price">🪙 500 نقطة</p>
+<button type="button" onclick="buyItem('بوكس Anti-DA', 500)" class="btn-buy">شراء المكافأة</button>
+</div>
+
+<!-- Item 6: New - ملف القضيه -->
+<div class="shop-item">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMSpQGSI053pocnZ4ArVmHbPmVRx-cRLl7Mz9vYmTVeg&s=10" alt="ملف القضيه">
+<h4 style="margin:5px 0;">ملف القضيه</h4>
+<p class="item-price">🪙 250 نقطة</p>
+<button type="button" onclick="buyItem('ملف القضيه', 250)" class="btn-buy">شراء المكافأة</button>
+</div>
+</div>
+</div>
+
+<!-- New Courses Section -->
+<div id="courses" class="section-box">
+<h3 class="section-title">5. الكورسات</h3>
+<p class="section-desc">كورسات مجانية أو مفتوحة تساعدك على بناء عادات صحية وتحسين صحتك الرقمية.</p>
+
+<div class="grid-shop">
+<div class="shop-item">
+<h4 style="margin:5px 0;">Learning How to Learn</h4>
+<button type="button" onclick="window.open('https://www.classcentral.com/course/learning-how-to-learn-8501', '_blank')" class="btn-buy">دوس هنا عشان تاخد الكورس</button>
+</div>
+
+<div class="shop-item">
+<h4 style="margin:5px 0;">Palouse Mindfulness (MBSR)</h4>
+<button type="button" onclick="window.open('https://palousemindfulness.com', '_blank')" class="btn-buy">دوس هنا عشان تاخد الكورس</button>
+</div>
+
+<div class="shop-item">
+<h4 style="margin:5px 0;">Brain Rot &amp; Digital Wellbeing</h4>
+<button type="button" onclick="window.open('https://www.classcentral.com/subject/digital-wellbeing', '_blank')" class="btn-buy">دوس هنا عشان تاخد الكورس</button>
+</div>
+
+<div class="shop-item">
+<h4 style="margin:5px 0;">Digital Wellbeing Courses</h4>
+<button type="button" onclick="window.open('https://www.classcentral.com/subject/digital-wellbeing', '_blank')" class="btn-buy">دوس هنا عشان تاخد الكورس</button>
+</div>
+
+<div class="shop-item">
+<h4 style="margin:5px 0;">Google Digital Wellbeing</h4>
+<button type="button" onclick="window.open('https://wellbeing.google', '_blank')" class="btn-buy">دوس هنا عشان تاخد الكورس</button>
+</div>
+</div>
+</div>
+
+<!-- New Events Section -->
+<div id="events" class="section-box">
+<h3 class="section-title">6. الندوات والمؤتمرات</h3>
+<p class="section-desc">شارك في الندوات والفعاليات المفيدة لتطوير نفسك وتقليل الوقت أمام الشاشة.</p>
+
+<div class="grid-shop">
+<div class="shop-item">
+<img src="https://wp.inspiring-workplaces.com/wp-content/uploads/2023/03/unnamed-1.jpeg" alt="Soft Skills Event">
+<h4 style="margin:5px 0;">Soft Skills Event</h4>
+<button type="button" onclick="window.open('https://forms.gle/7LxLveFt6LzyHtfp6', '_blank')" class="btn-buy">دوس هنا عشان تقدم في الايفنت</button>
+</div>
+
+<div class="shop-item">
+<img src="https://www.refinery29.com/images/11835707.jpg?format=webp&width=720&height=864&quality=85" alt="How to Have a Lower Screen Time">
+<h4 style="margin:5px 0;">How to Have a Lower Screen Time</h4>
+<button type="button" onclick="window.open('https://forms.gle/7LxLveFt6LzyHtfp6', '_blank')" class="btn-buy">دوس هنا عشان تقدم في الايفنت</button>
+</div>
+</div>
+</div>
+</main>
+
+<footer>
+<p>© 2026 مشروع Anti-DA. عيش بوعي وتحكم في عقلك.</p>
+</footer>
+
+<script>
+// نظام إدارة النقاط والبيانات المحلية بشكل آمن
+let points = parseInt(localStorage.getItem('anti_da_points')) || 0;
+let streak = parseInt(localStorage.getItem('anti_da_streak')) || 0;
+let quizDone = localStorage.getItem('anti_da_quiz') === 'true';
+
+// تحديث واجهة المستخدم فوراً
+document.getElementById('user-points').innerText = points;
+document.getElementById('streak-count').innerText = streak;
+
+function updatePoints(amount) {
+points += amount;
+localStorage.setItem('anti_da_points', points);
+document.getElementById('user-points').innerText = points;
+}
+
+// --- 1. QUIZ LOGIC ---
+let totalScore = 0;
+function nextQuestion(currentStep, score) {
+totalScore += score;
+document.getElementById('step-' + currentStep).classList.add('hidden');
+document.getElementById('step-' + (currentStep + 1)).classList.remove('hidden');
+}
+
+function showResult(score) {
+totalScore += score;
+document.getElementById('step-3').classList.add('hidden');
+document.getElementById('quiz-result').classList.remove('hidden');
+
+let resultText = "";
+if (totalScore <= 4) resultText = "ممتاز! مستوى الإدمان منخفض ولديك تحكم رائع بوعيك الرقمي.";
+else if (totalScore <= 7) resultText = "متوسط. التصفح العشوائي يسرق بعضاً من إنتاجيتك اليومية.";
+else resultText = "تحذير، مستوى الإدمان حاد وهاتفك يتحكم بيومك بالكامل.";
+
+document.getElementById('result-text').innerText = resultText;
+
+if(!quizDone) {
+updatePoints(15);
+localStorage.setItem('anti_da_quiz', 'true');
+quizDone = true;
+alert("تهانينا! حصلت على 15 نقطة لإكمال الاختبار.");
+}
+}
+
+function resetQuiz() {
+totalScore = 0;
+document.getElementById('quiz-result').classList.add('hidden');
+document.getElementById('step-1').classList.remove('hidden');
+}
+
+// --- 2. ACTIVITIES ---
+var alternatives = [
+"قم بعمل 10 عدات ضغط الآن فوراً واستشعر دقات قلبك 💪",
+"اذهب للمطبخ، واشرب كأساً من الماء ببطء كامل دون لمس الهاتف 💧",
+"رتب مكتبك أو غرفتك وتخلص من أي كركبة لا لزوم لها 🧹",
+"قم بعمل تمارين إطالة (Stretching) لرقبتك وظهرك لمدة 3 دقائق 🧘",
+"أغمض عينيك وخذ 10 أنفاس عميقة ببطء شديد 🌬️",
+"امسك كتاباً وقريباً منك واقرأ صفحة واحدة فقط بتركيز عالي 📖",
+"اذهب واغسل وجهك بماء بارد لإنعاش دورتك الدموية ❄️",
+"اكتب في ورقة خارجية 3 أشياء أنت ممتن لوجودها في حياتك اليوم 📝"
+ ];
+
+function generateAlternative() {
+var randomIndex = Math.floor(Math.random() * alternatives.length);
+document.getElementById('alternative-text').innerText = alternatives[randomIndex];
+document.getElementById('btn-done').classList.remove('hidden');
+}
+
+function completeActivity() {
+updatePoints(10);
+document.getElementById('alternative-text').innerText = "رائع! تم إضافة 10 نقاط لرصيدك الكلي. اختر نشاطاً آخر إذا شعرت بالملل مجدداً.";
+document.getElementById('btn-done').classList.add('hidden');
+}
+
+// --- 3. STREAK TRACKER ---
+function incrementStreak() {
+streak += 1;
+localStorage.setItem('anti_da_streak', streak);
+document.getElementById('streak-count').innerText = streak;
+updatePoints(30);
+document.getElementById('btn-streak').disabled = true;
+document.getElementById('btn-streak').innerText = "تم تسجيل اليوم ✅";
+document.getElementById('btn-streak').style.backgroundColor = "#e2e8f0";
+document.getElementById('btn-streak').style.color = "#475569";
+alert("عاش يا بطل! تم تسجيل يومك بنجاح وأخذت 30 نقطة.");
+}
+
+// --- 4. SHOP LOGIC ---
+function buyItem(itemName, itemPrice) {
+if (points >= itemPrice) {
+updatePoints(-itemPrice);
+alert("تم شراء '" + itemName + "' بنجاح! خصم " + itemPrice + " نقطة من رصيدك. استمتع بمكافأتك المستحقة بدون أي شعور بالذنب!");
+} else {
+alert("عذراً، رصيدك من النقاط غير كافٍ لشراء هذه المكافأة. نفذ المزيد من الأنشطة البديلة لتجمع النقاط!");
+}
+}
+</script>
+</body>
+</html>
